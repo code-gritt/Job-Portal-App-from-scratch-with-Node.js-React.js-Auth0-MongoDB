@@ -15,25 +15,25 @@ const app = express();
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: process.env.SECRET,
-  baseURL: process.env.BASE_URL,
-  clientID: process.env.CLIENT_ID,
-  issuerBaseURL: process.env.ISSUER_BASE_URL,
-  routes: {
-    postLogoutRedirect: process.env.CLIENT_URL,
-    callback: "/callback",
-    logout: "/logout",
-    login: "/login",
-  },
+  secret: "Uv-610d1_h5WDFA_IJtbYbrlJY06bJ8MAhrdM6G0i2gfyo6t_lL0NXSv4IcjcwFn",
+  baseURL: "http://localhost:8000",
+  clientID: "zhD0GiBkiSVE6TEQANz0kHWzqn0lQ5ne",
+  issuerBaseURL: "https://dev-ywsbpmzafophgwis.us.auth0.com",
+  // routes: {
+  //   postLogoutRedirect: process.env.CLIENT_URL,
+  //   callback: "/callback",
+  //   logout: "/logout",
+  //   login: "/login",
+  // },
 
-  session: {
-    absoluteDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
-    cookie: {
-      domain: "jobfindr-q1cl.onrender.com",
-      secure: true,
-      sameSite: "None",
-    },
-  },
+  // session: {
+  //   absoluteDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+  //   cookie: {
+  //     domain: "jobfindr-q1cl.onrender.com",
+  //     secure: true,
+  //     sameSite: "None",
+  //   },
+  // },
 };
 
 app.use(
@@ -108,8 +108,8 @@ const server = async () => {
   try {
     await connect();
 
-    app.listen(process.env.PORT, () => {
-      console.log(`Server is running on port ${process.env.PORT}`);
+    app.listen(8000, () => {
+      console.log(`Server is running on port 8000`);
     });
   } catch (error) {
     console.log("Server error", error.message);
